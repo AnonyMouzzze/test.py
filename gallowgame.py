@@ -1,4 +1,5 @@
 import random
+import math
 
 def draw_gallow(rest):
     gallows = """___$$$$$$$$$$______Я-ВИСЕЛИЦО!________
@@ -26,7 +27,7 @@ __________________$$$$$$$$$$$$$$$$$$$$$
 """
     draw_percantage = 100 - rest*10
     total_lines = gallows.count("\n")
-    display_lines = draw_percantage*total_lines // 100
+    display_lines = math.ceil(draw_percantage*total_lines / 100)
     lines = gallows.split('\n')[:display_lines]
     print('\n'*150)
     print('\n'.join(lines))
