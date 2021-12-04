@@ -26,7 +26,7 @@ def calculate(hand):
     }
     players_points = 0
     for h in hand:
-        if h == 'T' and players_points <= 10:
+        if h == 'T' and players_points > 10:
             players_points += 1
         else:
             players_points += cards_cost[h]
