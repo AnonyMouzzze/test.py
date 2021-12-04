@@ -34,7 +34,6 @@ def calculate(hand):
 
 
 def want_more():
-    global choice
     ask = input('Need more cards?(Y/N) ').strip().lower()
     if ask == 'y':
         return True
@@ -67,8 +66,8 @@ while start:
     print(f'Your cards: {players_cards}')
     print(f'Your points: {calculate(players_cards)}')
 
-    choice = want_more()
-    if choice:
+
+    if want_more():
         players_cards.append(random.choice(deck))
         if calculate(players_cards) <= 21:
             continue
